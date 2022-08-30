@@ -6,5 +6,10 @@
 
 body {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+}
+#root {
+  display: flex;
+  align-content: space-between;
+  background-image: linear-gradient(180deg, #000000 0%, #010d38 100%);
 }
