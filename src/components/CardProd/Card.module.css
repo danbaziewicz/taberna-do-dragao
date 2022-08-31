@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+.mainMenu {
+  width: 17rem;
+  height: 20rem;
+  display: grid;
+  text-align: center;
+  background-color: #766b65;
+  margin: 10px 15px;
+  border-radius: 10px;
+}
+.mainMenu h4 {
+  font-family: "MedievalSharp", cursive;
+  margin-top: 15px;
+}
+
+.mainMenu small,
+h5 {
+  font-family: "Poppins", sans-serif;
+}
+
+.mainMenu img {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+}
+.descricao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
