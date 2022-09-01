@@ -1,0 +1,9 @@
+.divPedidos {
+  width: 100%;
+  min-height: 74vh;
+  background-color: #0d060f;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
