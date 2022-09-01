@@ -2,3 +2,20 @@
     height: 100vh;
     background: linear-gradient(to left, #0D060F 0%, #766B65 100%);
 }
+
+.conteudo {
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #F6EBDA;
+    border-top: 1px solid #766B65;
+}
+
+.circulo {
+    border: 5px solid #230000;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
