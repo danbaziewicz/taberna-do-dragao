@@ -54,7 +54,7 @@ const Footer = () => {
               type="email"
               name="email"
               id="email"
-              placeholder={"seumelhoremail@outlook.com"}
+              placeholder={"Seu e-mail?"}
               style={S.input}
             />
             <input type="submit" value="Assinar" className={S.button}/>
