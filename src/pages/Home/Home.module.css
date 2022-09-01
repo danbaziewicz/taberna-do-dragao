@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
 .container {
     height: 100vh;
     background: linear-gradient(to left, #0D060F 0%, #766B65 100%);
 }
 
 .conteudo {
-    height: 50vh;
+    height: 60vh;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -13,9 +16,65 @@
     border-top: 1px solid #766B65;
 }
 
+.title {
+    width: 25%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+}
+
+.title > h1 {
+    font-size: 60px;
+    font-family: 'MedievalSharp', cursive;
+}
+
+.title > p {
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cor {
+    color: #5D3C18;
+}
+
+.button {
+    width: 250px;
+    height: 50px;
+    color: #f2f2f2;
+    text-align:center;
+    background-image: linear-gradient(to bottom, #1E2824 0%, #766b65 100%);
+    border-radius: 25px;
+    font-size: 20px;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .button:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+  }
+
 .circulo {
-    border: 5px solid #230000;
+    border: 10px solid #230000;
     width: 350px;
     height: 350px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo2 {
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #766B65;
+}
+
+.conteudo2 > img {
+    width: 480px;
 }
