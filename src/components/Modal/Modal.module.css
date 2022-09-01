@@ -1,0 +1,50 @@
+.divModal {
+  min-height: 72vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.txtModal {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px;
+  background-color: #1e2824;
+  border-radius: 10px;
+}
+
+.meio {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f7f7f7;
+}
+
+.div100 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.divFecha {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  height: 20px;
+}
+
+.divBtns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
