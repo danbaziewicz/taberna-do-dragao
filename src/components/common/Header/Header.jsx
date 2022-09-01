@@ -18,7 +18,7 @@ const Header = () => {
         <Link className={S.link} to={"/pedidos"}>
           Pedidos
         </Link>
-        <Link className={S.link} to={"/login"}>
+        <Link className={S.linkLogin} to={"/login"}>
           Login
         </Link>
         <Link className={S.link} to={"/cart"}>
