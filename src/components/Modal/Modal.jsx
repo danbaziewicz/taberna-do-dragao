@@ -5,13 +5,51 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import S from "./Modal.module.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Label from "../common/Label/Label";
+import axios from "axios";
 
 const Modal = () => {
   const [open, setOpen] = useState(false);
+  const [pedidos, setPedidos] = useState([]);
+  const [produtos, setProdutos] = useState([]);
+  const [order, setOrder] = useState({ numero: "", pedido: [] });
+
+  async function salvaPedido() {
+    //await axios.post('link da api' order)
+    carregarPedidos();
+  }
+
+  async function carregarPedidos() {
+    const response = await axios.get("link da api em pedidos");
+    setPedidos(response.data);
+  }
+
+  async function excluirPedido() {
+    //await axios.delete('link da api'id) por ID
+    carregarPedidos();
+  }
+
+  async function carregaProdutos() {
+    const response = await axios.get("https://apirest-pub.herokuapp.com/menu");
+    console.log(response.data.dados);
+    setProdutos(response.data.dados);
+  }
+
+  async function novoPedido() {
+    const valores = document.querySelectorAll("input");
+    valores.forEach((valores) => (valores.value = ""));
+
+    setOrder({ numero: "", pedido: [] });
+    await carregaProdutos();
+  }
+
+  useEffect(() => {
+    carregaProdutos();
+  }, []);
+
   const handleOpenModal = () => {
     setOpen(true);
   };
@@ -45,16 +83,7 @@ const Modal = () => {
             ></Typography>
             <div className={S.container}>
               <div className={S.divProdutos}>
-                <Label text="NOME DO PRODUTO" />
-                <Label text="R$ 00,00" />
-                <TextField
-                  id="outlined-number"
-                  type="number"
-                  sx={{ width: "10ch" }}
-                />
-              </div>
-              <div className={S.divProdutos}>
-                <Label text="NOME DO PRODUTO" />
+                <Label text={produtos.produto} />
                 <Label text="R$ 00,00" />
                 <TextField
                   id="outlined-number"
