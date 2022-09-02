@@ -3,6 +3,7 @@ import Button from "../../components/common/Button/Button";
 import S from "./Home.module.css";
 import craftbeer from "../../assets/images/craftbeer.svg";
 import { GiMartini, GiWaterDrop, GiBeerBottle, GiHops, GiWheat, GiGrain} from "react-icons/gi";
+import ActionAreaCard from "../../components/common/Card/Card";
 
 const Home = () => {
   return (
@@ -27,6 +28,11 @@ const Home = () => {
         <div className={S.circulo}>
           <p>imagem de um drink</p>
         </div>
+      </section>
+      <section className={S.sectionCards}>
+        <ActionAreaCard/>
+        <ActionAreaCard/>
+        <ActionAreaCard/>
       </section>
       <section className={S.conteudo2}>
         <img src={craftbeer} />
