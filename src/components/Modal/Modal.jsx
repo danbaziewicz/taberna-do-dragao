@@ -9,46 +9,38 @@ import React, { useEffect, useState } from "react";
 import S from "./Modal.module.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Label from "../common/Label/Label";
-import axios from "axios";
+import { getMenu } from "../../Service/Service";
 
 const Modal = () => {
+  const [reload, setReload] = useState(false);
   const [open, setOpen] = useState(false);
   const [pedidos, setPedidos] = useState([]);
+  const [pedido, setPedido] = useState({ qtd: "", produtos: [] });
   const [produtos, setProdutos] = useState([]);
-  const [order, setOrder] = useState({ numero: "", pedido: [] });
 
-  async function salvaPedido() {
-    //await axios.post('link da api' order)
-    carregarPedidos();
-  }
-
-  async function carregarPedidos() {
-    const response = await axios.get("link da api em pedidos");
-    setPedidos(response.data);
-  }
-
-  async function excluirPedido() {
-    //await axios.delete('link da api'id) por ID
-    carregarPedidos();
-  }
-
-  async function carregaProdutos() {
-    const response = await axios.get("https://apirest-pub.herokuapp.com/menu");
-    console.log(response.data.dados);
-    setProdutos(response.data.dados);
-  }
+  const request = async (close) => {
+    const response = await getMenu(close);
+    setProdutos(response);
+  };
 
   async function novoPedido() {
     const valores = document.querySelectorAll("input");
-    valores.forEach((valores) => (valores.value = ""));
+    valores.forEach((input) => (input.value = ""));
 
-    setOrder({ numero: "", pedido: [] });
-    await carregaProdutos();
+    setPedido({ qtd: "", produtos: [] });
+    console.log(pedido);
   }
 
   useEffect(() => {
-    carregaProdutos();
+    request("/menu");
   }, []);
+
+  useEffect(() => {
+    if (reload) {
+      request("/menu");
+      setReload(false);
+    }
+  }, [reload]);
 
   const handleOpenModal = () => {
     setOpen(true);
@@ -82,19 +74,26 @@ const Modal = () => {
               sx={{ mt: 2 }}
             ></Typography>
             <div className={S.container}>
-              <div className={S.divProdutos}>
-                <Label text={produtos.produto} />
-                <Label text="R$ 00,00" />
-                <TextField
-                  id="outlined-number"
-                  type="number"
-                  sx={{ width: "10ch" }}
-                />
-              </div>
+              {produtos.map((produtos, index) => (
+                <div className={S.divProdutos}>
+                  <Label text={produtos.produto} />
+                  <Label text={`R$ ${produtos.valor}0`} />
+                  <TextField
+                    id="outlined-number"
+                    type="number"
+                    sx={{ width: "10ch" }}
+                    defaultValue={0}
+                    InputProps={{ inputProps: { min: 0, max: 10 } }}
+                    onChange={(e) => {
+                      setPedido({ ...pedido, qtd: e.target.value });
+                    }}
+                  />
+                </div>
+              ))}
             </div>
             <div className={S.divBtns}>
               <Button onClick={handleClose}>FECHAR</Button>
-              <Button onClick={handleClose}>SALVAR</Button>
+              <Button onClick={novoPedido}>SALVAR</Button>
             </div>
           </Box>
         </div>
