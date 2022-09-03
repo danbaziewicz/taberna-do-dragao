@@ -4,17 +4,19 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
   width: 100%;
+  background-color: #dad7cd;
 }
 
 .titulo {
   font-family: "MedievalSharp", cursive;
-  font-size: 50px;
+  font-size: 4.5rem;
   grid-column: span 4;
   text-align: center;
   margin-top: 2rem;
+  color: #000814;
 }
 
 .btns {
@@ -30,6 +32,8 @@
   display: grid;
   justify-content: center;
   align-items: stretch;
-  grid-template-columns: repeat(3, auto);
-  grid-column-gap: 38px;
+  grid-template-columns: repeat(4, auto);
+  grid-column-gap: 0.2rem;
+  grid-column-start: 2;
+  grid-column-end: 4;
 }
