@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  width: 100%;
+}
+
+.titulo {
+  font-family: "MedievalSharp", cursive;
+  font-size: 50px;
+  grid-column: span 4;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btns {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column: span 4;
+  align-items: flex-end;
+  gap: 5rem;
+}
+
+.cards {
+  display: grid;
+  justify-content: center;
+  align-items: stretch;
+  grid-template-columns: repeat(3, auto);
+  grid-column-gap: 38px;
+}

@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "https://apirest-pub.herokuapp.com/",
+    baseURL: "https://taberna-dragao.herokuapp.com",
 });
 
 export const getMenu = async () => {
     const response = await instance.get('/menu');
-    const json = await response.data.menu;
+    const json = await response.data.dados;
     return json;
 };
 
