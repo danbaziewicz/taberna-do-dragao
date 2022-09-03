@@ -23,14 +23,6 @@ const Modal = () => {
     setProdutos(response);
   };
 
-  async function novoPedido() {
-    const valores = document.querySelectorAll("input");
-    valores.forEach((input) => (input.value = ""));
-
-    setPedido({ qtd: "", produtos: [] });
-    console.log(pedido);
-  }
-
   useEffect(() => {
     request("/menu");
   }, []);
@@ -41,6 +33,22 @@ const Modal = () => {
       setReload(false);
     }
   }, [reload]);
+
+  function handleAdicionaPedido(quantidade, ptd, valor) {
+    // const selectPedido = pedido.produtos.find((c) => (c.id = ptd.id));
+    // // pedido.produtos.push(ptd);
+    // if (selectPedido) {
+    //   selectPedido.quantidade = parseInt(qtd);
+    //} else {
+    pedido.produtos.push(ptd);
+    // setPedido(...pedido, )
+    //}
+    setPedido({ qtd: "", produtos: [] });
+    console.log(pedido);
+    //TO DO
+    //VERIFICAR RECEBIMENTO DE VALOR DE INPUT
+    //MANDAR VALORES OBJ PARA ARRAY
+  }
 
   const handleOpenModal = () => {
     setOpen(true);
@@ -74,26 +82,29 @@ const Modal = () => {
               sx={{ mt: 2 }}
             ></Typography>
             <div className={S.container}>
-              {produtos.map((produtos, index) => (
-                <div className={S.divProdutos}>
-                  <Label text={produtos.produto} />
-                  <Label text={`R$ ${produtos.valor}0`} />
-                  <TextField
-                    id="outlined-number"
-                    type="number"
-                    sx={{ width: "10ch" }}
-                    defaultValue={0}
-                    InputProps={{ inputProps: { min: 0, max: 10 } }}
-                    onChange={(e) => {
-                      setPedido({ ...pedido, qtd: e.target.value });
-                    }}
-                  />
+              {produtos.map((produto) => (
+                <div key={produto.id}>
+                  <div className={S.divProdutos}>
+                    <Label text={produto.produto} />
+                    <Label text={`R$ ${produto.valor}0`} />
+                    <TextField
+                      id="outlined-number"
+                      type="number"
+                      sx={{ width: "10ch" }}
+                      defaultValue={0}
+                      InputProps={{ inputProps: { min: 0, max: 10 } }}
+                      onChange={(e) => {
+                        console.log(e.target.value);
+                        handleAdicionaPedido(e.target.value, produto);
+                      }}
+                    />
+                  </div>
                 </div>
               ))}
             </div>
             <div className={S.divBtns}>
               <Button onClick={handleClose}>FECHAR</Button>
-              <Button onClick={novoPedido}>SALVAR</Button>
+              <Button onClick={handleClose}>SALVAR</Button>
             </div>
           </Box>
         </div>
