@@ -15,7 +15,7 @@ const Modal = () => {
   const [reload, setReload] = useState(false);
   const [open, setOpen] = useState(false);
   const [pedidos, setPedidos] = useState([]);
-  const [pedido, setPedido] = useState({ qtd: "", produtos: [] });
+  const [pedido, setPedido] = useState([]);
   const [produtos, setProdutos] = useState([]);
 
   const request = async (close) => {
@@ -27,8 +27,14 @@ const Modal = () => {
     const valores = document.querySelectorAll("input");
     valores.forEach((input) => (input.value = ""));
 
-    setPedido({ qtd: "", produtos: [] });
-    console.log(pedido);
+    const filtro = await pedido.filter((value, index, self) =>
+      index === self.findIndex((t) => (
+        t.nome === value.nome
+      ))
+    )
+    setPedidos([...pedidos, ...filtro])
+    console.log(pedidos);
+    setPedido([]);
   }
 
   useEffect(() => {
@@ -77,15 +83,17 @@ const Modal = () => {
               {produtos.map((produtos, index) => (
                 <div className={S.divProdutos}>
                   <Label text={produtos.produto} />
-                  <Label text={`R$ ${produtos.valor}0`} />
+                  <Label text={`R$ ${produtos.valor}`} />
                   <TextField
+                    nome={produtos.produto}
                     id="outlined-number"
                     type="number"
                     sx={{ width: "10ch" }}
+                    key={index}
                     defaultValue={0}
                     InputProps={{ inputProps: { min: 0, max: 10 } }}
                     onChange={(e) => {
-                      setPedido({ ...pedido, qtd: e.target.value });
+                      setPedido([{ nome: index, qtd: e.target.value }, ...pedido]);
                     }}
                   />
                 </div>
