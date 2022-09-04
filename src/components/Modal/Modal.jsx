@@ -56,9 +56,27 @@ const Modal = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  // const buttonSX = {
+  //   "&:hover": {
+  //     backgroundColor: "#230000",
+  //   },
+  // };
+
   return (
     <div className={S.divModal}>
-      <Button onClick={handleOpenModal}>NOVO PEDIDO</Button>
+      <Button
+        variant="contained"
+        sx={{
+          width: "10rem",
+          margin: "10px",
+          backgroundColor: "#230000",
+          fontFamily: "Poppins",
+        }}
+        onClick={handleOpenModal}
+      >
+        NOVO PEDIDO
+      </Button>
       <Modal1
         open={open}
         onClose={handleClose}
@@ -103,8 +121,28 @@ const Modal = () => {
               ))}
             </div>
             <div className={S.divBtns}>
-              <Button onClick={handleClose}>FECHAR</Button>
-              <Button onClick={handleClose}>SALVAR</Button>
+              <Button
+                variant="contained"
+                sx={{
+                  margin: "5px",
+                  backgroundColor: "#230000",
+                  fontFamily: "Poppins",
+                }}
+                onClick={handleClose}
+              >
+                FECHAR
+              </Button>
+              <Button
+                variant="contained"
+                sx={{
+                  margin: "5px",
+                  backgroundColor: "#230000",
+                  fontFamily: "Poppins",
+                }}
+                onClick={handleClose}
+              >
+                SALVAR
+              </Button>
             </div>
           </Box>
         </div>
