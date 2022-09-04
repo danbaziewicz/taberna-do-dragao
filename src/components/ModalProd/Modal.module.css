@@ -1,0 +1,18 @@
+.fade {
+  top: 0;
+  width: 100%;
+  height: 200vh;
+  position: absolute;
+  background-color: #00000080;
+}
+
+.btnClose {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-weight: 800;
+  font-size: large;
+  width: 140px;
+  height: 50px;
+  color: aquamarine;
+}

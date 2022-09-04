@@ -5,16 +5,23 @@ import { BsFillPlusSquareFill, BsFillArrowUpCircleFill } from "react-icons/bs";
 import CardProd from '../../components/CardProd/CardProd'
 import S from './Cardapio.module.css'
 import { getMenu } from "../../Service/Service";
+import ModalProd from '../../components/ModalProd/ModalProd';
+import Form from '../../components/Form/Form';
 
 
 const Cardapio = () => {
   const [reload, setReload] = useState(false);
   const [produtos, setProdutos] = useState([]);
+  const [open, setOpen] = useState(false);
 
   const request = async (close) => {
     const response = await getMenu(close);
     setProdutos(response);
   };
+
+  const handleOpenModal = () => {
+    setOpen(true)
+  }
 
   useEffect(() => {
     request("/menu");
@@ -34,8 +41,8 @@ const Cardapio = () => {
       </h2>
       <div className={S.btns}>
         <Button variant="contained" startIcon={<DeleteIcon />}>Deletar</Button>
-        <Button variant="contained" startIcon={<BsFillPlusSquareFill />}>Adicionar</Button>
-        <Button variant="contained" startIcon={<BsFillArrowUpCircleFill />}>Atualizar</Button>
+        <Button onClick={handleOpenModal} variant="contained" startIcon={<BsFillPlusSquareFill />}>Adicionar</Button>
+        <Button onClick={handleOpenModal} variant="contained" startIcon={<BsFillArrowUpCircleFill />}>Atualizar</Button>
       </div>
       <div className={S.cards}>
         {produtos.map((produtos, index) => {
@@ -48,8 +55,10 @@ const Cardapio = () => {
               valor={produtos.valor} />
           )
         })}
-
       </div>
+      {open && <ModalProd open={open} setOpen={setOpen}>
+        <Form setOpen={setOpen} setReload={setReload} />
+      </ModalProd>}
     </div>
   )
 }
