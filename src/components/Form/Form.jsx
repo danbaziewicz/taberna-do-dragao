@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import S from './Form.module.css'
 import { postProduto } from '../../Service/Service'
 import Button from '../common/Button/Button'
 import Input from '../common/Input/Input'
@@ -24,7 +25,7 @@ const Form = ({ setOpen, setReload }) => {
     }
 
     return (
-        <form onSubmit={toSave}>
+        <form className={S.formPost} onSubmit={toSave}>
             <Label>Insira a URL de imagem do produto:</Label>
             <Input value={url} type='url' placeholder='https://...'
                 required={true} onChange={(e) => setUrl(e.target.value)} />
@@ -34,7 +35,7 @@ const Form = ({ setOpen, setReload }) => {
             <Input value={valor} required={true} onChange={(e) => setValor(e.target.value)} />
             <Label>Insira a descrição do produto:</Label>
             <Input value={descricao} type='text' required={true} minLength={10} onChange={(e) => setDescricao(e.target.value)} />
-            <div>
+            <div className={S.btnPost}>
                 <Button />
             </div>
         </form>
