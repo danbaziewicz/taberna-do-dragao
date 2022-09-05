@@ -25,20 +25,30 @@ const Form = ({ setOpen, setReload }) => {
     }
 
     return (
-        <form className={S.formPost} onSubmit={toSave}>
-            <Label>Insira a URL de imagem do produto:</Label>
-            <Input value={url} type='url' placeholder='https://...'
-                required={true} onChange={(e) => setUrl(e.target.value)} />
-            <Label>Insira o nome do produto:</Label>
-            <Input value={produto} type='text' required={true} onChange={(e) => setProduto(e.target.value)} />
-            <Label>Insira o valor do produto:</Label>
-            <Input value={valor} required={true} onChange={(e) => setValor(e.target.value)} />
-            <Label>Insira a descrição do produto:</Label>
-            <Input value={descricao} type='text' required={true} minLength={10} onChange={(e) => setDescricao(e.target.value)} />
-            <div className={S.btnPost}>
-                <Button />
-            </div>
-        </form>
+        <div className={S.formPost}>
+            <form onSubmit={toSave}>
+                <fieldset>
+                    <Label text='Insira a URL de imagem do produto:' />
+                    <Input value={url} type='url' placeholder='https://...'
+                        required={true} onChange={(e) => setUrl(e.target.value)} />
+                </fieldset>
+                <fieldset>
+                    <Label text='Insira o nome do produto:' />
+                    <Input value={produto} type='text' required={true} onChange={(e) => setProduto(e.target.value)} />
+                </fieldset>
+                <fieldset>
+                    <Label text='Insira o valor do produto:' />
+                    <Input value={valor} required={true} onChange={(e) => setValor(e.target.value)} />
+                </fieldset>
+                <fieldset>
+                    <Label text='Insira a descrição do produto:' />
+                    <Input value={descricao} type='text' required={true} minLength={10} onChange={(e) => setDescricao(e.target.value)} />
+                </fieldset>
+                <div className={S.btnPost}>
+                    <Button texto='Submeter' />
+                </div>
+            </form>
+        </div >
     )
 }
 
