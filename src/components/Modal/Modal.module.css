@@ -1,10 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
 .divModal {
-  min-height: 72vh;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  display: grid;
+  justify-items: center;
 }
 
 .txtModal {
@@ -14,9 +13,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border: 1px;
+  border: 1px solid #230000;
   background-color: #1e2824;
   border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
 .meio {
@@ -26,6 +27,7 @@
   justify-content: center;
   align-items: center;
   color: #f7f7f7;
+  background-color: #5d3c183a;
 }
 
 .div100 {
@@ -55,9 +57,7 @@
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
-  border-style: solid;
-  border-width: 1px;
-  border-color: black;
+  border: 1px solid #230000;
   background-color: #5d3c18;
   margin-bottom: 2px;
 }
@@ -67,4 +67,17 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.container::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: #230000;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #5d3c18;
+  border-radius: 3rem;
 }
