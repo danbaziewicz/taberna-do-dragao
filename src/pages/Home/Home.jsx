@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../components/common/Button/Button";
 import S from "./Home.module.css";
+import { Link } from 'react-router-dom'
 import craftbeer from "../../assets/images/craftbeer.svg";
 import { GiMartini, GiWaterDrop, GiBeerBottle, GiHops, GiWheat, GiGrain} from "react-icons/gi";
 import ActionAreaCard from "../../components/common/Card/Card";
@@ -18,11 +19,12 @@ const Home = () => {
             te oferecer
           </p>
           <div>
+          <Link className={S.link} to={"/cardapio"}>
             <Button
               texto="Peça já o seu!"
               style={S.button}
               icon={<GiMartini size="30px" color="#EF761E" />}
-            />
+            /></Link>
           </div>
         </div>
         <div className={S.circulo}>
