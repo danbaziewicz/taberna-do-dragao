@@ -15,7 +15,7 @@ const Modal = () => {
   const [reload, setReload] = useState(false);
   const [open, setOpen] = useState(false);
   const [pedidos, setPedidos] = useState([]);
-  const [pedido, setPedido] = useState({ qtd: "", produtos: [] });
+  const [pedido, setPedido] = useState({ qtd: "", produtosPedido: [] });
   const [produtos, setProdutos] = useState([]);
 
   const request = async (close) => {
@@ -34,17 +34,30 @@ const Modal = () => {
     }
   }, [reload]);
 
-  function handleAdicionaPedido(quantidade, ptd, valor) {
+  
+  function handleAdicionaPedido(quantidade, ptd) {
     // const selectPedido = pedido.produtos.find((c) => (c.id = ptd.id));
     // // pedido.produtos.push(ptd);
     // if (selectPedido) {
-    //   selectPedido.quantidade = parseInt(qtd);
-    //} else {
-    pedido.produtos.push(ptd);
+      //   selectPedido.quantidade = parseInt(qtd);
+      //} else {
+        
+        const prod = [];
+    prod[ptd.id] = ptd.valor
+    pedido.produtosPedido.push(ptd);
+    pedido.qtd = quantidade;
+    // const prodArr = pedido.produtosPedido[0].produto;
+    // if (prodArr) {
+    //   console.log("entrou");
+    // }
+
     // setPedido(...pedido, )
     //}
-    setPedido({ qtd: "", produtos: [] });
-    console.log(pedido);
+    // console.log(pedido.produtosPedido[0].produto);
+    // console.log(prod[ptd.id])
+    console.log(pedido)
+
+    // setPedido({ qtd: "", produtosPedido: [] });
     //TO DO
     //VERIFICAR RECEBIMENTO DE VALOR DE INPUT
     //MANDAR VALORES OBJ PARA ARRAY
