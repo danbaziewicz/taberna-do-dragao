@@ -83,8 +83,11 @@
 
 .alert {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
+  gap: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .alert > h3 {
