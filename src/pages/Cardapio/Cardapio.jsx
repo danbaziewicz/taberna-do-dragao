@@ -4,7 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import { BsFillPlusSquareFill, BsFillArrowUpCircleFill } from "react-icons/bs";
 import CardProd from '../../components/CardProd/CardProd'
 import S from './Cardapio.module.css'
-import { getMenu } from "../../Service/Service";
+import { getMenu, postProduto } from "../../Service/Service";
 import ModalProd from '../../components/ModalProd/ModalProd';
 import Form from '../../components/Form/Form';
 
@@ -13,11 +13,31 @@ const Cardapio = () => {
   const [reload, setReload] = useState(false);
   const [produtos, setProdutos] = useState([]);
   const [open, setOpen] = useState(false);
+  const [formAtualiza, setFormAtualiza] = useState({
+    url: "",
+    produto: "",
+    valor: "",
+    descricao: ""
+  })
 
   const request = async (close) => {
     const response = await getMenu(close);
     setProdutos(response);
   };
+
+  const handleClick = async (e) => {
+    e.preventDefault()
+    await postProduto(formAtualiza)
+    alert("Produto adicionado com sucesso!")
+    setOpen(false)
+    setReload(true)
+  }
+
+  const handleOnChange = (target, key) => {
+    const value = target.value;
+    setFormAtualiza({ ...formAtualiza, [key]: value });
+    console.log(formAtualiza);
+  }
 
   const handleOpenModal = () => {
     setOpen(true)
@@ -25,14 +45,14 @@ const Cardapio = () => {
 
   useEffect(() => {
     request("/menu");
-  }, []);
-
-  useEffect(() => {
-    if (reload) {
-      request("/menu");
-      setReload(false);
-    }
   }, [reload]);
+
+  // useEffect(() => {
+  //   if (reload) {
+  //     request("/menu");
+  //     setReload(false);
+  //   }
+  // }, [reload]);
 
   return (
     <div className={S.container}>
@@ -56,7 +76,7 @@ const Cardapio = () => {
           )
         })}
       </div>
-      {open && <ModalProd open={open} setOpen={setOpen}>
+      {open && <ModalProd open={open} setOpen={setOpen} handleClick={handleClick} handleOnChange={handleOnChange}>
         <Form setOpen={setOpen} setReload={setReload} />
       </ModalProd>}
     </div>
