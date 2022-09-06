@@ -47,12 +47,12 @@ const Cardapio = () => {
     request("/menu");
   }, [reload]);
 
-  // useEffect(() => {
-  //   if (reload) {
-  //     request("/menu");
-  //     setReload(false);
-  //   }
-  // }, [reload]);
+  useEffect(() => {
+    if (reload) {
+      request("/menu");
+      setReload(false);
+    }
+  }, [reload]);
 
   return (
     <div className={S.container}>
@@ -60,9 +60,7 @@ const Cardapio = () => {
         Cardápio
       </h2>
       <div className={S.btns}>
-        <Button variant="contained" startIcon={<DeleteIcon />}>Deletar</Button>
         <Button onClick={handleOpenModal} variant="contained" startIcon={<BsFillPlusSquareFill />}>Adicionar</Button>
-        <Button onClick={handleOpenModal} variant="contained" startIcon={<BsFillArrowUpCircleFill />}>Atualizar</Button>
       </div>
       <div className={S.cards}>
         {produtos.map((produtos, index) => {

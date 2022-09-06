@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import S from './Form.module.css'
-import { postProduto } from '../../Service/Service'
 import Button from '../common/Button/Button'
 import Input from '../common/Input/Input'
 import Label from '../common/Label/Label'
@@ -28,7 +27,7 @@ const Form = ({ handleOnChange, handleClick }) => {
                     <Input type='text' required={true} minLength={10} onChange={({ target }) => handleOnChange(target, "descricao")} />
                 </fieldset>
                 <div className={S.btnPost}>
-                    <Button onClick={handleClick} texto='Submeter' />
+                    <Button handleClick={handleClick} texto='Submeter' />
                 </div>
             </form>
         </div >
