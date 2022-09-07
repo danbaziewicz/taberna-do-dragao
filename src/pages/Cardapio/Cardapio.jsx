@@ -6,12 +6,15 @@ import S from './Cardapio.module.css'
 import { getMenu, postProduto } from "../../Service/Service";
 import ModalProd from '../../components/ModalProd/ModalProd';
 import Form from '../../components/Form/Form';
+import Label from '../../components/common/Label/Label';
+import Input from '../../components/common/Input/Input';
 
 
 const Cardapio = () => {
   const [reload, setReload] = useState(false);
   const [produtos, setProdutos] = useState([]);
   const [open, setOpen] = useState(false);
+  const [busca, setBusca] = useState("");
   const [formAtualiza, setFormAtualiza] = useState({
     categoria: "",
     url: "",
@@ -24,16 +27,6 @@ const Cardapio = () => {
     const response = await getMenu(close);
     setProdutos(response);
   };
-
-  // const handleClick = async (e) => {
-  //   e.preventDefault()
-  //   const body = { ...formAtualiza, valor: parseFloat(formAtualiza.valor) }
-  //   console.log(body);
-  //   // await postProduto(body)
-  //   alert("Produto adicionado com sucesso!")
-  //   setOpen(false)
-  //   setReload(true)
-  // }
 
   const handleOnChange = (target, key) => {
     const value = target.value;
@@ -57,8 +50,19 @@ const Cardapio = () => {
       <div className={S.btns}>
         <Button onClick={handleOpenModal} variant="contained" startIcon={<BsFillPlusSquareFill />}>Adicionar</Button>
       </div>
+      <section className={S.searchInput} >
+        <Label>Busca:</Label>
+        <Input type="search" value={busca} onChange={(e) => setBusca(e.target.value)} />
+      </section>
       <div className={S.cards}>
-        {produtos.map((produtos, index) => {
+        {!!produtos && produtos.filter((val) => {
+          if (busca === "") {
+            return val
+          } else if (val.produto.toLowerCase().includes(busca.toLowerCase()) ||
+            val.descricao.toLowerCase().includes(busca.toLowerCase())) {
+            return val
+          }
+        }).map((produtos, index) => {
           return (
             <CardProd
               key={index}

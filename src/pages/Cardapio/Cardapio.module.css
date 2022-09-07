@@ -10,6 +10,29 @@
   background-color: #dad7cd;
 }
 
+.searchInput {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+  color: black;
+}
+
+.searchInput input {
+  margin-bottom: 12px;
+  border: 2px;
+  font-size: 15px;
+  height: 35px;
+  width: 80%;
+  border-radius: 5px;
+  grid-column: span 4;
+  background-color: #f4f3ee;
+}
+
+.searchInput label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
 .titulo {
   font-family: "MedievalSharp", cursive;
   font-size: 4.5rem;
