@@ -124,7 +124,7 @@ const Modal = () => {
                 <div key={produto.id}>
                   <div className={S.divProdutos}>
                     <Label text={produto.produto} />
-                    <Label text={`R$ ${produto.valor}0`} />
+                    <Label text={`R$ ${produto.valor}`} />
                     <TextField
                       id="outlined-number"
                       type="number"
