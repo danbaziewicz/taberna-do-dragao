@@ -16,10 +16,10 @@ export const postProduto = async (body) => {
   return json;
 };
 
-export const deleteProduto = async (id) => {
-  const response = await instance.delete(`/menu/produto/${id}`);
+export const deleteProduto = async (produto) => {
+  const response = await instance.delete(`/menu/produto/${produto}`);
 };
 
-export const editaProduto = async (id, body) => {
-  const response = await instance.put(`/menu/produto/${id}`, body);
+export const editaProduto = async (produto, body) => {
+  const response = await instance.put(`/menu/produto/${produto}`, body);
 };

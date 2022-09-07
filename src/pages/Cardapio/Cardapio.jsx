@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button } from '@mui/material'
-import DeleteIcon from '@mui/icons-material/Delete'
-import { BsFillPlusSquareFill, BsFillArrowUpCircleFill } from "react-icons/bs";
+import { BsFillPlusSquareFill } from "react-icons/bs";
 import CardProd from '../../components/CardProd/CardProd'
 import S from './Cardapio.module.css'
 import { getMenu, postProduto } from "../../Service/Service";
@@ -14,6 +13,7 @@ const Cardapio = () => {
   const [produtos, setProdutos] = useState([]);
   const [open, setOpen] = useState(false);
   const [formAtualiza, setFormAtualiza] = useState({
+    categoria: "",
     url: "",
     produto: "",
     valor: "",
@@ -25,13 +25,15 @@ const Cardapio = () => {
     setProdutos(response);
   };
 
-  const handleClick = async (e) => {
-    e.preventDefault()
-    await postProduto(formAtualiza)
-    alert("Produto adicionado com sucesso!")
-    setOpen(false)
-    setReload(true)
-  }
+  // const handleClick = async (e) => {
+  //   e.preventDefault()
+  //   const body = { ...formAtualiza, valor: parseFloat(formAtualiza.valor) }
+  //   console.log(body);
+  //   // await postProduto(body)
+  //   alert("Produto adicionado com sucesso!")
+  //   setOpen(false)
+  //   setReload(true)
+  // }
 
   const handleOnChange = (target, key) => {
     const value = target.value;
@@ -45,13 +47,6 @@ const Cardapio = () => {
 
   useEffect(() => {
     request("/menu");
-  }, [reload]);
-
-  useEffect(() => {
-    if (reload) {
-      request("/menu");
-      setReload(false);
-    }
   }, [reload]);
 
   return (
@@ -74,7 +69,7 @@ const Cardapio = () => {
           )
         })}
       </div>
-      {open && <ModalProd open={open} setOpen={setOpen} handleClick={handleClick} handleOnChange={handleOnChange}>
+      {open && <ModalProd open={open} setOpen={setOpen} handleOnChange={handleOnChange}>
         <Form setOpen={setOpen} setReload={setReload} />
       </ModalProd>}
     </div>
