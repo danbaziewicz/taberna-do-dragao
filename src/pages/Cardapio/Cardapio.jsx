@@ -3,7 +3,7 @@ import { Button } from '@mui/material'
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import CardProd from '../../components/CardProd/CardProd'
 import S from './Cardapio.module.css'
-import { getMenu, postProduto } from "../../Service/Service";
+import { getMenu } from "../../Service/Service";
 import ModalProd from '../../components/ModalProd/ModalProd';
 import Form from '../../components/Form/Form';
 import Label from '../../components/common/Label/Label';
@@ -47,19 +47,16 @@ const Cardapio = () => {
       <h2 className={S.titulo}>
         Cardápio
       </h2>
-      <div className={S.btns}>
-        <Button onClick={handleOpenModal} variant="contained" startIcon={<BsFillPlusSquareFill />}>Adicionar</Button>
-      </div>
+      <Button onClick={handleOpenModal} variant="contained" startIcon={<BsFillPlusSquareFill />}>Adicionar</Button>
       <section className={S.searchInput} >
-        <Label>Busca:</Label>
+        <Label text="Busca:" />
         <Input type="search" value={busca} onChange={(e) => setBusca(e.target.value)} />
       </section>
       <div className={S.cards}>
         {!!produtos && produtos.filter((val) => {
           if (busca === "") {
             return val
-          } else if (val.produto.toLowerCase().includes(busca.toLowerCase()) ||
-            val.descricao.toLowerCase().includes(busca.toLowerCase())) {
+          } else if (val.produto.toLowerCase().includes(busca.toLowerCase())) {
             return val
           }
         }).map((produtos, index) => {
