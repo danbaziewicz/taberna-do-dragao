@@ -42,10 +42,13 @@ const Modal = () => {
       //   selectPedido.quantidade = parseInt(qtd);
       //} else {
         
-        const prod = [];
-    prod[ptd.id] = ptd.valor
-    pedido.produtosPedido.push(ptd);
-    pedido.qtd = quantidade;
+
+    pedido.produtosPedido.push(ptd.valor);
+
+    const soma = (a, b) => a+b;
+    const total = pedido.produtosPedido.reduce(soma)
+    
+
     // const prodArr = pedido.produtosPedido[0].produto;
     // if (prodArr) {
     //   console.log("entrou");
@@ -55,7 +58,11 @@ const Modal = () => {
     //}
     // console.log(pedido.produtosPedido[0].produto);
     // console.log(prod[ptd.id])
-    console.log(pedido)
+    console.log(total)
+    // console.log(ptd)
+
+
+    //map com reduce
 
     // setPedido({ qtd: "", produtosPedido: [] });
     //TO DO
