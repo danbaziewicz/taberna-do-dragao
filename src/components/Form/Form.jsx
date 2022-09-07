@@ -7,7 +7,6 @@ import { postProduto } from "../../Service/Service";
 
 const Form = () => {
     const [reload, setReload] = useState(false);
-    const [produtos, setProdutos] = useState([]);
     const [open, setOpen] = useState(false);
     const [formAtualiza, setFormAtualiza] = useState({
         categoria: "",
@@ -40,25 +39,25 @@ const Form = () => {
             <form >
                 <fieldset>
                     <Label text='Categoria do Produto' />
-                    <Input type='text' placeholder='Comida ou bebida?'
+                    <Input value={formAtualiza.categoria} type='text' placeholder='Comida ou bebida?'
                         required={true} onChange={({ target }) => handleOnChange(target, "categoria")} />
                 </fieldset>
                 <fieldset>
                     <Label text='Insira a URL de imagem do produto:' />
-                    <Input type='url' placeholder='https://...'
+                    <Input value={formAtualiza.url} type='url' placeholder='https://...'
                         required={true} onChange={({ target }) => handleOnChange(target, "url")} />
                 </fieldset>
                 <fieldset>
                     <Label text='Insira o nome do produto:' />
-                    <Input type='text' required={true} onChange={({ target }) => handleOnChange(target, "produto")} />
+                    <Input value={formAtualiza.produto} type='text' required={true} onChange={({ target }) => handleOnChange(target, "produto")} />
                 </fieldset>
                 <fieldset>
                     <Label text='Insira o valor do produto:' />
-                    <Input type='number' required={true} onChange={({ target }) => handleOnChange(target, "valor")} />
+                    <Input value={formAtualiza.valor} type='number' required={true} onChange={({ target }) => handleOnChange(target, "valor")} />
                 </fieldset>
                 <fieldset>
                     <Label text='Insira a descrição do produto:' />
-                    <Input type='text' required={true} minLength={10} onChange={({ target }) => handleOnChange(target, "descricao")} />
+                    <Input value={formAtualiza.descricao} type='text' required={true} minLength={10} onChange={({ target }) => handleOnChange(target, "descricao")} />
                 </fieldset>
                 <div className={S.btnPost}>
                     <Button onClick={handleClick} texto='Submeter' />

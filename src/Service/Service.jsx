@@ -12,7 +12,7 @@ export const getMenu = async () => {
 
 export const postProduto = async (body) => {
   const response = await instance.post("/menu", body);
-  const json = await response.data.msg;
+  const json = await response.data.dados;
   return json;
 };
 
