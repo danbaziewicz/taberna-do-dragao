@@ -7,4 +7,5 @@
   display: grid;
   justify-items: stretch;
   font-family: "Poppins", sans-serif;
+  grid-template-columns: repeat(4, auto);
 }
