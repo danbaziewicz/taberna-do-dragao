@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import S from './Form.module.css'
 import Button from '../common/Button/Button'
 import Input from '../common/Input/Input'
