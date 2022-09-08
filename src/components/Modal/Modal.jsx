@@ -11,7 +11,7 @@ import Label from "../common/Label/Label";
 import { getMenu } from "../../Service/Service";
 import Input from "../common/Input/Input";
 
-const Modal = () => {
+const Modal = ({valorFinal, setValorFinal}) => {
   const [reload, setReload] = useState(false);
   const [open, setOpen] = useState(false);
   const [pedidos, setPedidos] = useState([]);
@@ -34,53 +34,25 @@ const Modal = () => {
     }
   }, [reload]);
 
-  
   function handleAdicionaPedido(quantidade, ptd) {
-
-      ptd.quantidade = parseInt(quantidade)
-
-      pedido.produtosPedido.push(ptd)
-
-      console.log(pedido)
-    
-    
-    
-    
-    
-    
-    
-    //setPedido(...pedido, ptd.valor)
-    // pedido.produtosPedido.push(ptd.valor);
-
-    // const soma = (a, b) => a+b;
-    // const total = pedido.produtosPedido.reduce(soma)
-    
-
-    // const prodArr = pedido.produtosPedido[0].produto;
-    // if (prodArr) {
-    //   console.log("entrou");
-    // }
-
-    // setPedido(...pedido, )
-    //}
-    // console.log(pedido.produtosPedido[0].produto);
-    // console.log(prod[ptd.id])
-    //console.log(pedido)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    // console.log(ptd)
-
-
-    //map com reduce
-
-    // setPedido({ qtd: "", produtosPedido: [] });
-    //TO DO
-    //VERIFICAR RECEBIMENTO DE VALOR DE INPUT
-    //MANDAR VALORES OBJ PARA ARRAY
+      const novosProdutos = [...produtos]
+      const index = produtos.findIndex(item => item.id === ptd.id)
+      novosProdutos[index].quantidade = quantidade
+      setProdutos(novosProdutos)
+      pedido.produtosPedido.push(produtos)
   }
 
   function salvaPedido() {
-    pedidos.push(pedido)
-    // setPedidos(pedidos, pedido)
-    console.log(pedidos)
+    const pedidoFinal = pedido.produtosPedido[pedido.produtosPedido.length -1]
+    pedidos.push(pedidoFinal)
+    let valorTotal = 0;
+    for(let j = 0; j<pedidos[pedidos.length -1].length; j++){
+      if(pedidos[pedidos.length -1][j].quantidade){
+        valorTotal = (pedidos[pedidos.length -1][j].quantidade * pedidos[pedidos.length -1][j].valor) + valorTotal;
+      }
+    }
+    setValorFinal([...valorFinal, {num: pedido.numero, valorTotal: valorTotal}])
+    handleClose()
   }
 
   const handleOpenModal = () => {
@@ -90,18 +62,13 @@ const Modal = () => {
     setOpen(false);
   };
 
-  // const buttonSX = {
-  //   "&:hover": {
-  //     backgroundColor: "#230000",
-  //   },
-  // };
-
   return (
     <div className={S.divModal}>
       <Button
         variant="contained"
         sx={{
           width: "10rem",
+          height: "4rem",
           margin: "10px",
           backgroundColor: "#230000",
           fontFamily: "Poppins",
