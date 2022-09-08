@@ -18,8 +18,8 @@
 </h3>
 
 # Inspiração
-<p align="center"> Pensando em na temática medieval e a paixão pelo clássico RPG Dungeons and Dragons e o lendário desenho Caverna do Dragão<br/>
-foi criado o <strong>Pub Taberna do Dragão</strong>. Um lugar para todas as idades, com ambientação medieval e completamente temático,</br> todos os nossos produtos remetem
+<p align="center"> Pensando em na temática medieval e a paixão pelo clássico RPG Dungeons and Dragons e o lendário desenho Caverna do Dragão
+foi criado o <strong>Pub Taberna do Dragão</strong>. Um lugar para todas as idades, com ambientação medieval e completamente temático, todos os nossos produtos remetem
 a esta época, trazendo também um pouco de mitologia e uma pitada de games para dar sabor aos nossos deliciosos pratos e drinks.</p>
 
 # Tecnologias e ferramentas utilizadas
