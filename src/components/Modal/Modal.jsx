@@ -7,15 +7,15 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import S from "./Modal.module.css";
-import { AiFillCloseCircle } from "react-icons/ai";
 import Label from "../common/Label/Label";
 import { getMenu } from "../../Service/Service";
+import Input from "../common/Input/Input";
 
 const Modal = () => {
   const [reload, setReload] = useState(false);
   const [open, setOpen] = useState(false);
   const [pedidos, setPedidos] = useState([]);
-  const [pedido, setPedido] = useState({ qtd: "", produtosPedido: [] });
+  const [pedido, setPedido] = useState({ qtd: '', produtosPedido: [] });
   const [produtos, setProdutos] = useState([]);
 
   const request = async (close) => {
@@ -36,17 +36,23 @@ const Modal = () => {
 
   
   function handleAdicionaPedido(quantidade, ptd) {
-    // const selectPedido = pedido.produtos.find((c) => (c.id = ptd.id));
-    // // pedido.produtos.push(ptd);
-    // if (selectPedido) {
-      //   selectPedido.quantidade = parseInt(qtd);
-      //} else {
-        
 
-    pedido.produtosPedido.push(ptd.valor);
+      ptd.quantidade = parseInt(quantidade)
+      pedido.produtosPedido.push(ptd)
+      
+      console.log(pedido.produtosPedido)
+    
+    
+    
+    
+    
+    
+    
+    //setPedido(...pedido, ptd.valor)
+    // pedido.produtosPedido.push(ptd.valor);
 
-    const soma = (a, b) => a+b;
-    const total = pedido.produtosPedido.reduce(soma)
+    // const soma = (a, b) => a+b;
+    // const total = pedido.produtosPedido.reduce(soma)
     
 
     // const prodArr = pedido.produtosPedido[0].produto;
@@ -58,7 +64,7 @@ const Modal = () => {
     //}
     // console.log(pedido.produtosPedido[0].produto);
     // console.log(prod[ptd.id])
-    console.log(total)
+    //console.log(pedido)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     // console.log(ptd)
 
 
@@ -68,6 +74,12 @@ const Modal = () => {
     //TO DO
     //VERIFICAR RECEBIMENTO DE VALOR DE INPUT
     //MANDAR VALORES OBJ PARA ARRAY
+  }
+
+  function salvaPedido() {
+    const valorP = pedidos.push(pedido.produtosPedido)
+    // setPedidos(...pedidos, pedido.produtosPedido)
+    console.log(pedido.produtosPedido)
   }
 
   const handleOpenModal = () => {
@@ -106,14 +118,10 @@ const Modal = () => {
         <div className={S.meio}>
           <Box className={S.txtModal}>
             <div className={S.div100}>
-              <div>
-                <div className={S.divFecha}>
-                  <AiFillCloseCircle onClick={handleClose} />
-                </div>
-              </div>
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 CADASTRAR NOVO PEDIDO
               </Typography>
+              <Input type="text" placeholder="Nº pedido" required="required"/>
             </div>
             <Typography
               id="modal-modal-description"
@@ -159,7 +167,7 @@ const Modal = () => {
                   backgroundColor: "#230000",
                   fontFamily: "Poppins",
                 }}
-                onClick={handleClose}
+                onClick={salvaPedido}
               >
                 SALVAR
               </Button>
