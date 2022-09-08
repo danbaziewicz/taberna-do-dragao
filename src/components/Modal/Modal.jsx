@@ -15,7 +15,7 @@ const Modal = () => {
   const [reload, setReload] = useState(false);
   const [open, setOpen] = useState(false);
   const [pedidos, setPedidos] = useState([]);
-  const [pedido, setPedido] = useState({ qtd: '', produtosPedido: [] });
+  const [pedido, setPedido] = useState({ numero: '', produtosPedido: [] });
   const [produtos, setProdutos] = useState([]);
 
   const request = async (close) => {
@@ -38,9 +38,10 @@ const Modal = () => {
   function handleAdicionaPedido(quantidade, ptd) {
 
       ptd.quantidade = parseInt(quantidade)
+
       pedido.produtosPedido.push(ptd)
-      
-      console.log(pedido.produtosPedido)
+
+      console.log(pedido)
     
     
     
@@ -77,9 +78,9 @@ const Modal = () => {
   }
 
   function salvaPedido() {
-    const valorP = pedidos.push(pedido.produtosPedido)
-    // setPedidos(...pedidos, pedido.produtosPedido)
-    console.log(pedido.produtosPedido)
+    pedidos.push(pedido)
+    // setPedidos(pedidos, pedido)
+    console.log(pedidos)
   }
 
   const handleOpenModal = () => {
@@ -121,7 +122,9 @@ const Modal = () => {
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 CADASTRAR NOVO PEDIDO
               </Typography>
-              <Input type="text" placeholder="Nº pedido" required="required"/>
+              <Input type="text" placeholder="Nº pedido" required="required" onChange={(event) => {
+                setPedido({ ...pedido, numero: event.target.value })
+              }}/>
             </div>
             <Typography
               id="modal-modal-description"
