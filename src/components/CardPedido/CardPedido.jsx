@@ -5,9 +5,14 @@ const CardPedido = () => {
   return (
     <div className={S.pedidos}>
       <h1>Pedidos</h1>
-      <div className={S.divCard}>
-        <h3>seus pedidos aqui</h3>
-      </div>
+      {/* <div className={S.divCard}>
+        {pedidos.map((pedido) =>(
+          <div key={pedido.id}>
+            <h3>Pedido nº: {pedido.numero} </h3>
+            <h3>Total: {pedido.valor}</h3>
+          </div>
+        ))}
+      </div> */}
     </div>
   );
 };
