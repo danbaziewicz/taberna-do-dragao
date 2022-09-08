@@ -18,8 +18,10 @@ export const postProduto = async (body) => {
 
 export const deleteProduto = async (produto) => {
   const response = await instance.delete(`/menu/produto/${produto}`);
+  return response
 };
 
-export const editaProduto = async (produto, body) => {
+export const editProduto = async (produto, body) => {
   const response = await instance.put(`/menu/produto/${produto}`, body);
+  return response
 };

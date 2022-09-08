@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiFillEdit, AiOutlineDelete } from 'react-icons/ai'
 import S from './Card.module.css'
 
-const CardProd = ({ produto, descricao, url, valor }) => {
+const CardProd = ({ produto, descricao, url, valor, setopenDelete, setProdutosId }) => {
+
+    const openModal = () => {
+        setProdutosId(produto)
+        setopenDelete(true)
+    }
+
     return (
         <div className={S.mainMenu}>
             <div className={S.icon}>
-                <AiOutlineDelete className={S.delete} />
+                <AiOutlineDelete onClick={openModal} className={S.delete} />
                 <AiFillEdit className={S.update} />
             </div>
             <div className={S.descricao}>

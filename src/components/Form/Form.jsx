@@ -5,9 +5,7 @@ import Input from '../common/Input/Input'
 import Label from '../common/Label/Label'
 import { postProduto } from "../../Service/Service";
 
-const Form = () => {
-    const [reload, setReload] = useState(false);
-    const [open, setOpen] = useState(false);
+const Form = ({ setOpen, setReload }) => {
     const [formAtualiza, setFormAtualiza] = useState({
         categoria: "",
         url: "",
@@ -23,14 +21,13 @@ const Form = () => {
         console.log(body);
         await postProduto(body)
         alert("Produto adicionado com sucesso!")
-        setOpen(false)
         setReload(true)
+        setOpen(false)
     }
 
     const handleOnChange = (target, key) => {
         const value = target.value;
         setFormAtualiza({ ...formAtualiza, [key]: value });
-        // console.log(formAtualiza);
     }
 
 
