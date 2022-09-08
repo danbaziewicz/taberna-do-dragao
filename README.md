@@ -5,7 +5,7 @@
 
 <!--ts-->
    * [Status do projeto](#status-do-projeto)
-   * [Inspiração](#Inspiração)
+   * [Inspiração](#inspiração)
    * [Tecnologias utilizadas](#tecnologias-e-ferramentas-utilizadas)
    * [Instalação](#instalação)
    * [Acesse aqui](  )
@@ -54,6 +54,6 @@ npm run dev
   <tr>
     <td align="center"><a href="https://github.com/danbaziewicz"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/102393531?v=4" width="100px;" alt=""/><br /><sub><b>Danylo Baziewicz</b></sub></a><br /><a href="https://github.com/danbaziewicz" title="Danylo">⭐</a></td>
     <td align="center"><a href="https://github.com/lelaranja"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/93409210?v=4" width="100px;" alt=""/><br /><sub><b>Letícia Laranja</b></sub></a><br /><a href="https://github.com/lelaranja" title="Letícia">🍊</a></td>
-    <td align="center"><a href="https://github.com/ErikaTav"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/102770561?v=4" width="100px;" alt=""/><br /><sub><b>Luis Eduardo Gonçalves</b></sub></a><br /><a href="https://github.com/ErikaTav" title="Erika"> 🏾</a></td>
-    <td align="center"><a href="https://github.com/luiseduardot17"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/102761201?v=4" width="100px;" alt=""/><br /><sub><b>Luis Eduardo Gonçalves</b></sub></a><br /><a href="https://github.com/luiseduardot17" title="Luis Eduardo"> 🏾</a></td>
+    <td align="center"><a href="https://github.com/ErikaTav"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/102770561?v=4" width="100px;" alt=""/><br /><sub><b>Erika Rodrigues</b></sub></a><br /><a href="https://github.com/ErikaTav" title="Erika"> 🏾</a></td>
+    <td align="center"><a href="https://github.com/luiseduardot17"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/102761201?v=4" width="100px;" alt=""/><br /><sub><b>Luis E. Gonçalves</b></sub></a><br /><a href="https://github.com/luiseduardot17" title="Luis Eduardo"> 🏾</a></td>
   </tr>
