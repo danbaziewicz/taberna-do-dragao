@@ -4,7 +4,7 @@ import S from "./Home.module.css";
 import { Link } from "react-router-dom";
 import craftbeer from "../../assets/images/craftbeer.svg";
 import {
-  GiMartini,
+  GiSpikedDragonHead,
   GiWaterDrop,
   GiBeerBottle,
   GiHops,
@@ -34,7 +34,7 @@ const Home = () => {
               <Button
                 texto="Peça já o seu!"
                 style={S.button}
-                icon={<GiMartini size="30px" color="#EF761E" />}
+                icon={<GiSpikedDragonHead size="30px" color="#00FD03"/>}
               />
             </Link>
           </div>
