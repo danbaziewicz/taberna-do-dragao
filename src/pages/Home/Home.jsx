@@ -12,10 +12,10 @@ import {
   GiGrain,
 } from "react-icons/gi";
 import ActionAreaCard from "../../components/common/Card/Card";
-import tequila from "../../assets/images/tequila.png";
-import gin from "../../assets/images/gin.png";
-import martini from "../../assets/images/martini.png";
-import mojito from "../../assets/images/mojito.png";
+import hidromel from "../../assets/images/hidromel.png";
+import fogoVivo from "../../assets/images/fogoVivo.png";
+import cervejas from "../../assets/images/cervejas.png";
+import pocaoreiarthur from "../../assets/images/pocaoreiarthur.png";
 
 const Home = () => {
   return (
@@ -40,31 +40,31 @@ const Home = () => {
           </div>
         </div>
         <div className={S.circulo}>
-          <img src={mojito}/>
-          <h2>MOJITO</h2>
+          <img src={pocaoreiarthur}/>
         </div>
       </section>
       <section className={S.sectionCards}>
         <div className={S.tituloCards}><h2>Populares na taberna</h2></div>
         <div className={S.cards}>
         <ActionAreaCard
-          valor="3.5"
-          image={tequila}
-          titulo="Tequila"
-          descricao="Bebida alcoólica destilada, que é feito a partir do suco fermentado da planta mexicana de agave-azul, especificamente várias variedades de Agave tequilana Weber. Tequila pode ter entre 31% e 55% de álcool."
-        />
-        <ActionAreaCard
-          valor="4.5"
-          image={gin}
-          titulo="Gin"
-          descricao="É uma bebida destilada à base de cereais. Posteriormente passa por um processo de infusão com zimbro e outras especiarias. Tem teor alcoólico entre 37,5% e 50%, dependendo da marca."
-        />
-        <ActionAreaCard
           valor="4"
-          image={martini}
-          titulo="Martíni"
-          descricao="É um coquetel feito com gin e vermute seco, mexidos com gelo e coado em uma taça cocktail sem gelo. A sua finalização e decoração tradicional é um 'twist' de casca de limão-siciliano, ou com azeitonas verdes."
+          image={hidromel}
+          titulo="Hidromel"
+          descricao="Bebida alcoólica fermentada cuja maior parcela dos açúcares que a criou são provenientes do mel"
         />
+        <ActionAreaCard
+          valor="5"
+          image={cervejas}
+          titulo="Régua de Degustação"
+          descricao="Blend das nossas cervejas artesanais para a degustação"
+        />
+        <ActionAreaCard
+          valor="3.5"
+          image={fogoVivo}
+          titulo="Fogo Vivo"
+          descricao="Vodka, curaçau fino, limão, xarope de maçã verde e absinto"
+        />
+        
         </div>
         
       </section>

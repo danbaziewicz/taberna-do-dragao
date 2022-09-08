@@ -13,7 +13,7 @@ export default function ActionAreaCard({titulo, descricao, image, valor}) {
       <TextRating valor={valor}/>
         <CardMedia
           component="img"
-          height="200"
+          height="300"
           image={image}
           alt="bebida"
         />
