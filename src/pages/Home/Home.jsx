@@ -32,7 +32,7 @@ const Home = () => {
           <div>
             <Link className={S.link} to={"/cardapio"}>
               <Button
-                texto="Peça já o seu!"
+                texto="Peça já!"
                 style={S.button}
                 icon={<GiSpikedDragonHead size="30px" color="#00FD03"/>}
               />
