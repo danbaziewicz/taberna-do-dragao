@@ -1,6 +1,6 @@
 .pedidos {
-  min-height: 72vh;
-  min-width: 50%;
+  width: 12rem;
+  height: 12rem;
   margin: 30px;
   background-color: #766b65;
   text-align: center;
