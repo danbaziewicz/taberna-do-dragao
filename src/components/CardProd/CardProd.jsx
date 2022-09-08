@@ -2,7 +2,7 @@ import React from 'react'
 import { AiFillEdit, AiOutlineDelete } from 'react-icons/ai'
 import S from './Card.module.css'
 
-const CardProd = ({ produto, descricao, url, valor, setopenDelete, setProdutosId, setProdutosUpdate }) => {
+const CardProd = ({ url, produto, descricao, valor, setopenDelete, setProdutosId, setProdutosUpdate, setOpenUpdate }) => {
 
     const openModal = () => {
         setProdutosId(produto)
@@ -10,7 +10,7 @@ const CardProd = ({ produto, descricao, url, valor, setopenDelete, setProdutosId
     }
 
     const openModalUpdate = () => {
-        setProdutosUpdate(url, produto, descricao, valor)
+        setProdutosUpdate({ url, produto, descricao, valor })
         setOpenUpdate(true)
     }
 

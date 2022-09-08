@@ -31,8 +31,8 @@ const Cardapio = () => {
     descricao: ""
   })
 
-  const request = async (close) => {
-    const response = await getMenu(close);
+  const request = async () => {
+    const response = await getMenu();
     setProdutos(response);
   };
 
@@ -46,10 +46,15 @@ const Cardapio = () => {
   }
 
   useEffect(() => {
-    request("/menu");
-    setReload(false)
+    if (reload) {
+      request();
+      setReload(false)
+    }
   }, [reload]);
 
+  useEffect(() => {
+    request();
+  }, []);
 
   return (
     <div className={S.container}>
@@ -80,6 +85,7 @@ const Cardapio = () => {
               setopenDelete={setopenDelete}
               setProdutosId={setProdutosId}
               setProdutosUpdate={setProdutosUpdate}
+              setOpenUpdate={setOpenUpdate}
             />
           )
         })}
