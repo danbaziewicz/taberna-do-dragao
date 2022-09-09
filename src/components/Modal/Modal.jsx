@@ -89,7 +89,7 @@ const Modal = ({valorFinal, setValorFinal}) => {
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 CADASTRAR NOVO PEDIDO
               </Typography>
-              <Input type="text" placeholder="Nº pedido" required="required" onChange={(event) => {
+              <Input type="text" placeholder="Nº pedido" required={true} onChange={(event) => {
                 setPedido({ ...pedido, numero: event.target.value })
               }}/>
             </div>
