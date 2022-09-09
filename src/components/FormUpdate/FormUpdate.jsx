@@ -1,7 +1,7 @@
-import { Input } from '@mui/material'
 import React, { useState } from 'react'
 import { editProduto } from '../../Service/Service'
 import Button from '../common/Button/Button'
+import Input from '../common/Input/Input'
 import Label from '../common/Label/Label'
 import S from './FormUp.module.css'
 
@@ -35,7 +35,7 @@ const FormUpdate = ({ setOpenUpdate, produtosUpdate, setReload }) => {
 
     return (
         <div className={S.formPost}>
-            <form >
+            <form onSubmit={(e) => updateProd(e)} >
                 <fieldset>
                     <Label text='Categoria do Produto' />
                     <Input value={formPut.categoria} type='text' placeholder='Comida ou bebida?'
@@ -59,7 +59,7 @@ const FormUpdate = ({ setOpenUpdate, produtosUpdate, setReload }) => {
                     <Input value={formPut.descricao} type='text' required={true} minLength={10} onChange={({ target }) => handleOnChange(target, "descricao")} />
                 </fieldset>
                 <div className={S.btnPost}>
-                    <Button onClick={(e) => updateProd(e)} texto='Atualizar' />
+                    <Input type='submit' value='Atualizar' />
                     <Button onClick={handleCloseUpdate} texto='Cancelar' />
                 </div>
             </form>

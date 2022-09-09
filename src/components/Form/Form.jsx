@@ -61,7 +61,7 @@ const Form = ({ setOpen, setReload }) => {
                     <Input value={formAtualiza.descricao} type='text' required={true} minLength={10} onChange={({ target }) => handleOnChange(target, "descricao")} />
                 </fieldset>
                 <div className={S.btnPost}>
-                    <Input type='submit' text='Submeter' />
+                    <Input type='submit' value='Submeter' />
                     <Button onClick={handleClose} texto='Fechar' />
                 </div>
             </form>
