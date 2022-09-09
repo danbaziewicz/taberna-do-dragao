@@ -90,7 +90,7 @@ const Cardapio = () => {
           )
         })}
       </div>
-      {open && <ModalProd open={open} setOpen={setOpen} handleOnChange={handleOnChange}>
+      {open && <ModalProd open={open} setReload={setReload} setOpen={setOpen} handleOnChange={handleOnChange}>
         <Form setOpen={setOpen} setReload={setReload} />
       </ModalProd>}
       {openDelete && <ModalDelete setReload={setReload} openDelete={openDelete} setopenDelete={setopenDelete} produtosId={produtosId}>

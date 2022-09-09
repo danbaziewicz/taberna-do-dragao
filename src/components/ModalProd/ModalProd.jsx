@@ -6,7 +6,7 @@ import React from "react";
 import Form from "../Form/Form";
 import S from "./Modal.module.css"
 
-const ModalProd = ({ setOpen, handleOnChange, handleClick }) => {
+const ModalProd = ({ setOpen, handleOnChange, handleClick, setReload }) => {
 
     const handleClose = () => {
         setOpen(false);
@@ -22,7 +22,7 @@ const ModalProd = ({ setOpen, handleOnChange, handleClick }) => {
             >
                 <div>
                     <Box className={S.divInterna}>
-                        <Form handleOnChange={handleOnChange} handleClick={handleClick} />
+                        <Form handleOnChange={handleOnChange} handleClick={handleClick} setReload={setReload} />
                     </Box>
                 </div>
             </Modal>

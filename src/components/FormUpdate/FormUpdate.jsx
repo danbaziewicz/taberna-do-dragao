@@ -1,5 +1,6 @@
 import { Input } from '@mui/material'
 import React, { useState } from 'react'
+import { editProduto } from '../../Service/Service'
 import Button from '../common/Button/Button'
 import Label from '../common/Label/Label'
 import S from './FormUp.module.css'
@@ -15,7 +16,9 @@ const FormUpdate = ({ setOpenUpdate, produtosUpdate, setReload }) => {
 
     const updateProd = async (e) => {
         e.preventDefault()
-        await editProduto(produtosUpdate.produto, formPut);
+        const body = { ...formPut, valor: parseFloat(formPut.valor) }
+        await editProduto(produtosUpdate.produto, body);
+        alert("Produto atualizado com sucesso!")
         setReload(true);
         setOpenUpdate(false);
     }
@@ -56,7 +59,7 @@ const FormUpdate = ({ setOpenUpdate, produtosUpdate, setReload }) => {
                     <Input value={formPut.descricao} type='text' required={true} minLength={10} onChange={({ target }) => handleOnChange(target, "descricao")} />
                 </fieldset>
                 <div className={S.btnPost}>
-                    <Button onClick={updateProd} texto='Atualizar' />
+                    <Button onClick={(e) => updateProd(e)} texto='Atualizar' />
                     <Button onClick={handleCloseUpdate} texto='Cancelar' />
                 </div>
             </form>
