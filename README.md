@@ -1,7 +1,7 @@
 # <p align="center">🍻 Taberna do Dragão 🐲</p>
 
 <p align="center" width="100%">
-<img src="https://github.com/danbaziewicz/taberna-do-dragao/blob/develop/src/assets/images/Logo_taberna.png?raw=true"/ width="400" title="hover text"></p>
+<img src="https://github.com/danbaziewicz/taberna-do-dragao/blob/develop/src/assets/images/Logo_taberna.png?raw=true"/ width="400" title="Logo"></p>
 
 <!--ts-->
    * [Status do projeto](#status-do-projeto)
@@ -24,6 +24,10 @@
 <p align="center"> Pensando em na temática medieval e a paixão pelo clássico RPG Dungeons and Dragons e o lendário desenho Caverna do Dragão
 foi criado o <strong>Pub Taberna do Dragão</strong>. Um lugar para todas as idades, com ambientação medieval e completamente temático, todos os nossos produtos remetem
 a esta época, trazendo também um pouco de mitologia e uma pitada de games para dar sabor aos nossos deliciosos pratos e drinks.</p>
+
+<p align="center" width="80%">
+  <video src='https://user-images.githubusercontent.com/102761201/189439461-3eaa3a88-eb13-40a0-b18d-d311031997a4.webm'/>
+</p>
 
 ## Tecnologias e ferramentas utilizadas
 <div align="center">
@@ -87,7 +91,7 @@ Para contribuir com nosso projeto, siga estas etapas:
  _Consulte a documentação do GitHub em_ [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
  
  ## 💻 Acesse aqui
-LINK DO VERCEL:
+https://taberna-do-dragao.vercel.app/
 
 # Projeto desenvolvido por
 <table align='center'>
