@@ -21,9 +21,6 @@ const Header = () => {
         <Link className={S.linkLogin} to={"/login"}>
           Login
         </Link>
-        <Link className={S.link} to={"/cart"}>
-        <BsCart3 size="35px" color="#1E2824"/>
-        </Link>
       </nav>
       
     </header>

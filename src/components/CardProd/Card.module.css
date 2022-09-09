@@ -2,12 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
 
 .mainMenu {
-  width: 17rem;
+  width: 19rem;
   height: 20rem;
   display: grid;
   text-align: center;
   background-color: #766b65;
-  margin: 10px 15px;
+  margin: 2rem 3rem;
   border-radius: 10px;
 }
 .mainMenu h4 {
@@ -21,9 +21,9 @@ h5 {
 }
 
 .mainMenu img {
-  width: 200px;
-  height: 200px;
-  border-radius: 20px;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 25rem;
 }
 .descricao {
   display: flex;
