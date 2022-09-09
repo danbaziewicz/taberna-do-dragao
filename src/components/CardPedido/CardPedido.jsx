@@ -6,7 +6,7 @@ const CardPedido = ({num, valorTotal}) => {
     <div className={S.pedidos}>
       <div className={S.divCard}>
             <h3>Pedido nº: {num} </h3>
-            <h3>Total: {valorTotal}</h3>
+            <h3>Total: R$ {valorTotal}</h3>
           </div>
       </div>
   );
