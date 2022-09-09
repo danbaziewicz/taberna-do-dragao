@@ -110,7 +110,6 @@ const Modal = ({valorFinal, setValorFinal}) => {
                       defaultValue={0}
                       InputProps={{ inputProps: { min: 0, max: 10 } }}
                       onChange={(e) => {
-                        console.log(e.target.value);
                         handleAdicionaPedido(e.target.value, produto);
                       }}
                     />
