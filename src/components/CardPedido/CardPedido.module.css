@@ -1,0 +1,26 @@
+.pedidos {
+  width: 12rem;
+  height: 12rem;
+  margin: 30px;
+  background-color: #766b65;
+  text-align: center;
+  border: 1px solid #5d3c18;
+  border-radius: 10px;
+  color: #230000;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.divCard {
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  align-content: space-around;
+  height: 5rem;
+  width: 10rem;
+  margin-bottom: 10px;
+  border: 1px solid #5d3c18;
+  border-radius: 10px;
+  padding: 5px;
+}
