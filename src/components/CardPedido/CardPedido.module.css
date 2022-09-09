@@ -1,6 +1,6 @@
 .pedidos {
-  min-height: 72vh;
-  min-width: 50%;
+  width: 12rem;
+  height: 12rem;
   margin: 30px;
   background-color: #766b65;
   text-align: center;
@@ -13,9 +13,12 @@
 }
 
 .divCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  align-content: space-around;
+  height: 5rem;
+  width: 10rem;
   margin-bottom: 10px;
   border: 1px solid #5d3c18;
   border-radius: 10px;

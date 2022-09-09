@@ -7,15 +7,15 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import S from "./Modal.module.css";
-import { AiFillCloseCircle } from "react-icons/ai";
 import Label from "../common/Label/Label";
 import { getMenu } from "../../Service/Service";
+import Input from "../common/Input/Input";
 
-const Modal = () => {
+const Modal = ({valorFinal, setValorFinal}) => {
   const [reload, setReload] = useState(false);
   const [open, setOpen] = useState(false);
   const [pedidos, setPedidos] = useState([]);
-  const [pedido, setPedido] = useState([]);
+  const [pedido, setPedido] = useState({ numero: '', produtosPedido: [] });
   const [produtos, setProdutos] = useState([]);
 
   const request = async (close) => {
@@ -34,20 +34,25 @@ const Modal = () => {
     }
   }, [reload]);
 
-  function handleAdicionaPedido(quantidade, ptd, valor) {
-    // const selectPedido = pedido.produtos.find((c) => (c.id = ptd.id));
-    // // pedido.produtos.push(ptd);
-    // if (selectPedido) {
-    //   selectPedido.quantidade = parseInt(qtd);
-    //} else {
-    pedido.produtos.push(ptd);
-    // setPedido(...pedido, )
-    //}
-    setPedido({ qtd: "", produtos: [] });
-    console.log(pedido);
-    //TO DO
-    //VERIFICAR RECEBIMENTO DE VALOR DE INPUT
-    //MANDAR VALORES OBJ PARA ARRAY
+  function handleAdicionaPedido(quantidade, ptd) {
+      const novosProdutos = [...produtos]
+      const index = produtos.findIndex(item => item.id === ptd.id)
+      novosProdutos[index].quantidade = quantidade
+      setProdutos(novosProdutos)
+      pedido.produtosPedido.push(produtos)
+  }
+
+  function salvaPedido() {
+    const pedidoFinal = pedido.produtosPedido[pedido.produtosPedido.length -1]
+    pedidos.push(pedidoFinal)
+    let valorTotal = 0;
+    for(let j = 0; j<pedidos[pedidos.length -1].length; j++){
+      if(pedidos[pedidos.length -1][j].quantidade){
+        valorTotal = (pedidos[pedidos.length -1][j].quantidade * pedidos[pedidos.length -1][j].valor) + valorTotal;
+      }
+    }
+    setValorFinal([...valorFinal, {num: pedido.numero, valorTotal: valorTotal}])
+    handleClose()
   }
 
   const handleOpenModal = () => {
@@ -57,18 +62,13 @@ const Modal = () => {
     setOpen(false);
   };
 
-  // const buttonSX = {
-  //   "&:hover": {
-  //     backgroundColor: "#230000",
-  //   },
-  // };
-
   return (
     <div className={S.divModal}>
       <Button
         variant="contained"
         sx={{
           width: "10rem",
+          height: "4rem",
           margin: "10px",
           backgroundColor: "#230000",
           fontFamily: "Poppins",
@@ -86,14 +86,12 @@ const Modal = () => {
         <div className={S.meio}>
           <Box className={S.txtModal}>
             <div className={S.div100}>
-              <div>
-                <div className={S.divFecha}>
-                  <AiFillCloseCircle onClick={handleClose} />
-                </div>
-              </div>
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 CADASTRAR NOVO PEDIDO
               </Typography>
+              <Input type="text" placeholder="Nº pedido" required={true} onChange={(event) => {
+                setPedido({ ...pedido, numero: event.target.value })
+              }}/>
             </div>
             <Typography
               id="modal-modal-description"
@@ -104,7 +102,7 @@ const Modal = () => {
                 <div key={produto.id}>
                   <div className={S.divProdutos}>
                     <Label text={produto.produto} />
-                    <Label text={`R$ ${produto.valor}0`} />
+                    <Label text={`R$ ${produto.valor}`} />
                     <TextField
                       id="outlined-number"
                       type="number"
@@ -112,7 +110,6 @@ const Modal = () => {
                       defaultValue={0}
                       InputProps={{ inputProps: { min: 0, max: 10 } }}
                       onChange={(e) => {
-                        console.log(e.target.value);
                         handleAdicionaPedido(e.target.value, produto);
                       }}
                     />
@@ -139,7 +136,7 @@ const Modal = () => {
                   backgroundColor: "#230000",
                   fontFamily: "Poppins",
                 }}
-                onClick={handleClose}
+                onClick={salvaPedido}
               >
                 SALVAR
               </Button>

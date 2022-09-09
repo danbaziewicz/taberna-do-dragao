@@ -1,14 +1,14 @@
 import React from "react";
 import S from "./CardPedido.module.css";
 
-const CardPedido = () => {
+const CardPedido = ({num, valorTotal}) => {
   return (
     <div className={S.pedidos}>
-      <h1>Pedidos</h1>
       <div className={S.divCard}>
-        <h3>seus pedidos aqui</h3>
+            <h3>Pedido nº: {num} </h3>
+            <h3>Total: R$ {valorTotal}</h3>
+          </div>
       </div>
-    </div>
   );
 };
 

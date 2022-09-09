@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import CardPedido from "../../components/CardPedido/CardPedido";
 import Modal from "../../components/Modal/Modal";
 import S from "./Pedidos.module.css";
 
+
 const Pedidos = () => {
+  const [valorFinal, setValorFinal] = useState([])
   return (
-    <div className={S.divPedidos}>
-      <Modal />
-      <CardPedido />
+    <div >
+      <Modal valorFinal={valorFinal} setValorFinal={setValorFinal}/>
+      <div className={S.divPedidos}>
+
+      {valorFinal.map((elemento, index)=>{
+        return(<CardPedido num={elemento.num} valorTotal={elemento.valorTotal} key={index}/>)
+      })}
+      
+      </div>
     </div>
   );
 };
