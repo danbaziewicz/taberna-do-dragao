@@ -12,9 +12,11 @@ import Label from '../../components/common/Label/Label';
 import Input from '../../components/common/Input/Input';
 import ModalDelete from '../../components/ModalDelete/ModalDelete';
 import ModalUpdate from '../../components/ModalUpdate/ModalUpdate';
+import Loader from '../../components/common/Loader/Loader'
 
 
 const Cardapio = () => {
+  const [removeLoading, setRemoveLoading] = useState(false)
   const [reload, setReload] = useState(false);
   const [produtos, setProdutos] = useState([]);
   const [produtosId, setProdutosId] = useState();
@@ -46,14 +48,20 @@ const Cardapio = () => {
   }
 
   useEffect(() => {
-    if (reload) {
-      request();
-      setReload(false)
-    }
+    setTimeout(() => {
+      if (reload) {
+        request();
+        setReload(false)
+        setRemoveLoading(true)
+      }
+    }, 100);
   }, [reload]);
 
   useEffect(() => {
-    request();
+    setTimeout(() => {
+      request();
+    setRemoveLoading(true)
+    }, 4000);
   }, []);
 
   return (
@@ -89,6 +97,7 @@ const Cardapio = () => {
             />
           )
         })}
+        {!removeLoading && <Loader/>}
       </div>
       {open && <ModalProd open={open} setReload={setReload} setOpen={setOpen} handleOnChange={handleOnChange}>
         <Form setOpen={setOpen} setReload={setReload} />
