@@ -51,7 +51,6 @@ const Login = () => {
             {valido ? "" : <p className={Styles.label}>senha invalida <abbr title="Sua senha precisa ter: Duas letras maiúsculas,três letras minúsculas, dois números e um caractere especial. Exemplo: AF@02cvb "><AiOutlineExclamationCircle /></abbr> </p>}
             <span className={Styles.focusInput} data-placeholder="Password"></span>
           </div>
-
           <div className={Styles.containerFormulariosBtn}>
             <input value="Conectar" type="submit" disabled={desabilita} className={Styles.formulariosBtn}></input>
           </div>
