@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+.divPedidos {
+  width: 100%;
+  min-height: 74vh;
+  background-color: #f6ebda;
+  display: grid;
+  justify-items: center;
+  font-family: "Poppins", sans-serif;
+  grid-template-columns: repeat(4, auto);
+}
