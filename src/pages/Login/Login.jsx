@@ -41,7 +41,7 @@ const Login = () => {
             <label htmlFor="email" className={Styles.label}>
               E-mail:
             </label>
-            <input className={Styles.input} type="email" id="email" name="email" />
+            <input className={Styles.input} type="email" id="email" name="email" required={true}/>
             <span className={Styles.focusInput} data-placeholder="E-mail"></span>
           </div>
 
