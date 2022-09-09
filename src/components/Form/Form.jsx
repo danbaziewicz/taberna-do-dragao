@@ -37,6 +37,7 @@ const Form = ({ setOpen, setReload }) => {
     return (
         <div className={S.formPost}>
             <form >
+                <h3>Adicione um novo produto</h3>
                 <fieldset>
                     <Label text='Categoria do Produto' />
                     <Input value={formAtualiza.categoria} type='text' placeholder='Comida ou bebida?'

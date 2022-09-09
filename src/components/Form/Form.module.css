@@ -19,15 +19,18 @@
   gap: 0.5rem;
 }
 
-.formPost input {
-  height: 2rem;
-  width: 20rem;
-}
-
 .formPost button {
-  height: 2.2rem;
-  width: 5rem;
-  color: black;
+  margin-left: 2rem;
+  width: 100px;
+  height: 40px;
+  color: #f2f2f2;
+  margin-top: 1rem;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #1e2824 0%, #766b65 100%);
+  border-radius: 15px;
+  font-size: 15px;
+  border: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 .formPost button:hover {
@@ -35,8 +38,18 @@
   cursor: pointer;
 }
 
+.formPost input {
+  height: 2rem;
+  width: 20rem;
+}
+
 .formPost fieldset {
   display: flex;
   flex-direction: column;
   border: none;
+}
+
+.btnPost {
+  display: flex;
+  gap: 2rem;
 }
