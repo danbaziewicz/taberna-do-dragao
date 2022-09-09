@@ -1,6 +1,7 @@
 import { Box, Modal } from '@mui/material'
 import React from 'react'
 import FormUpdate from '../FormUpdate/FormUpdate'
+import S from "./ModalUpdate.module.css"
 
 const ModalUpdate = ({ produtosUpdate, setReload, setOpenUpdate, openUpdate, handleClose }) => {
 
@@ -12,7 +13,7 @@ const ModalUpdate = ({ produtosUpdate, setReload, setOpenUpdate, openUpdate, han
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description">
-                <Box>
+                <Box className={S.divInterna}>
                     <FormUpdate produtosUpdate={produtosUpdate} setReload={setReload} setOpenUpdate={setOpenUpdate} />
                 </Box>
             </Modal>

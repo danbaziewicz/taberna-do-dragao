@@ -13,7 +13,7 @@ const ModalProd = ({ setOpen, handleOnChange, handleClick, setReload }) => {
     };
 
     return (
-        <div className={S.divPrincipal}>
+        <div>
             <Modal
                 open={open}
                 onClose={handleClose}
