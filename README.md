@@ -1,7 +1,7 @@
-# <p align="center"> Taberna do Dragão </p>
+# <p align="center">🍻 Taberna do Dragão 🐲</p>
 
 <p align="center" width="100%">
-<img src="https://raw.githubusercontent.com/danbaziewicz/taberna-do-dragao/home/src/assets/images/Logo_taberna_do_dragao.png"/></p>
+<img src="https://github.com/danbaziewicz/taberna-do-dragao/blob/develop/src/assets/images/Logo_taberna_do_dragao.png?raw=true"/ width="400" title="hover text"></p>
 
 <!--ts-->
    * [Status do projeto](#status-do-projeto)
@@ -83,6 +83,7 @@ Para contribuir com nosso projeto, siga estas etapas:
 - Faça suas alterações e as suba para o github: `git commit -m '<mensagem_commit>'`
 - Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
 - Crie a solicitação de pull.
+
  _Consulte a documentação do GitHub em_ [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
  
  ## 💻 Acesse aqui
