@@ -14,11 +14,14 @@ const Form = ({ setOpen, setReload }) => {
         descricao: ""
     })
 
+    const handleClose = () => {
+        setOpen(false);
+    }
+
 
     const handleClick = async (e) => {
         e.preventDefault()
         const body = { ...formAtualiza, valor: parseFloat(formAtualiza.valor) }
-        console.log(body);
         await postProduto(body)
         alert("Produto adicionado com sucesso!")
         setReload(true)
@@ -58,6 +61,7 @@ const Form = ({ setOpen, setReload }) => {
                 </fieldset>
                 <div className={S.btnPost}>
                     <Button onClick={handleClick} texto='Submeter' />
+                    <Button onClick={handleClose} texto='Fechar' />
                 </div>
             </form>
         </div >

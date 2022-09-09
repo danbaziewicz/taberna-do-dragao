@@ -22,7 +22,7 @@ const ModalProd = ({ setOpen, handleOnChange, handleClick, setReload }) => {
             >
                 <div>
                     <Box className={S.divInterna}>
-                        <Form handleOnChange={handleOnChange} handleClick={handleClick} setReload={setReload} />
+                        <Form handleOnChange={handleOnChange} handleClick={handleClick} setReload={setReload} setOpen={setOpen} />
                     </Box>
                 </div>
             </Modal>
