@@ -49,3 +49,28 @@
     transform: scale(1.1);
     transition: all 0.5s;
   }
+
+  @media screen and (max-width: 1366px) {
+    .header {
+        height: 30vh;
+    }
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .header {
+        height: 50vh;
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+    .nav {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav > img {
+        width: 250px;
+    }
+
+  }
