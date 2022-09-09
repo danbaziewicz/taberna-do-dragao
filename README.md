@@ -1,7 +1,7 @@
 # <p align="center">🍻 Taberna do Dragão 🐲</p>
 
 <p align="center" width="100%">
-<img src="https://github.com/danbaziewicz/taberna-do-dragao/blob/develop/src/assets/images/Logo_taberna_do_dragao.png?raw=true"/ width="400" title="hover text"></p>
+<img src="https://github.com/danbaziewicz/taberna-do-dragao/blob/develop/src/assets/images/Logo_taberna.png?raw=true"/ width="400" title="hover text"></p>
 
 <!--ts-->
    * [Status do projeto](#status-do-projeto)
