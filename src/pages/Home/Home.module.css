@@ -38,7 +38,7 @@
     color: #EF761E;
 }
 
-.button {
+.link > button {
     width: 250px;
     height: 50px;
     color: #f2f2f2;
@@ -51,7 +51,7 @@
     cursor: pointer;
   }
   
-  .button:hover {
+  .link > button:hover {
     transform: scale(1.1);
     transition: all 0.5s;
   }
