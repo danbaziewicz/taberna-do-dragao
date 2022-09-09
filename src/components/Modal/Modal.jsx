@@ -49,6 +49,7 @@ const Modal = ({valorFinal, setValorFinal}) => {
     for(let j = 0; j<pedidos[pedidos.length -1].length; j++){
       if(pedidos[pedidos.length -1][j].quantidade){
         valorTotal = (pedidos[pedidos.length -1][j].quantidade * pedidos[pedidos.length -1][j].valor) + valorTotal;
+        pedidos[pedidos.length -1][j].quantidade = 0;
       }
     }
     setValorFinal([...valorFinal, {num: pedido.numero, valorTotal: valorTotal}])
