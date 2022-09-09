@@ -41,6 +41,7 @@
 .formPost input {
   height: 2rem;
   width: 20rem;
+  background-color: white;
 }
 
 .formPost fieldset {

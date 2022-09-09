@@ -18,14 +18,30 @@
   margin-top: 2rem;
   color: #000814;
 }
+.searchInput {
+  display: block;
+  grid-row-start: 2;
+  grid-column: span 3;
+  margin-top: 2rem;
+  font-weight: 600;
+  color: black;
+  margin-left: 7rem;
+}
 
-.btns {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(4, 1fr);
+.searchInput input {
+  border: none;
+  font-size: 15px;
+  height: 35px;
+  width: 70%;
+  border-radius: 5px;
   grid-column: span 4;
-  align-items: flex-end;
-  gap: 5rem;
+  background-color: #f4f3ee;
+}
+
+.searchInput label {
+  font-size: 18px;
+  margin-right: 10px;
+  font-family: "Poppins", sans-serif;
 }
 
 .cards {
@@ -36,4 +52,19 @@
   grid-column-gap: 0.2rem;
   grid-column-start: 2;
   grid-column-end: 4;
+}
+
+.container button {
+  margin-left: 2rem;
+  width: 180px;
+  height: 40px;
+  color: #f2f2f2;
+  grid-column: span 1;
+  margin-top: 2rem;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #1e2824 0%, #766b65 100%);
+  border-radius: 25px;
+  font-size: 15px;
+  border: 0;
+  font-family: "Poppins", sans-serif;
 }

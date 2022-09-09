@@ -3,7 +3,7 @@
 
 .mainMenu {
   width: 19rem;
-  height: 20rem;
+  height: 21rem;
   display: grid;
   text-align: center;
   background-color: #766b65;
@@ -31,4 +31,23 @@ h5 {
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+.icon {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin: 0.2rem;
+  font-size: 1.2rem;
+  color: #f0ead2;
+}
+
+.delete:hover {
+  color: #e63946;
+  cursor: pointer;
+}
+
+.update:hover {
+  color: #003566;
+  cursor: pointer;
 }

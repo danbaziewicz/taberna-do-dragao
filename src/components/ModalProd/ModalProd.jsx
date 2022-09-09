@@ -6,13 +6,14 @@ import React from "react";
 import Form from "../Form/Form";
 import S from "./Modal.module.css"
 
-const ModalProd = ({ setOpen }) => {
+const ModalProd = ({ setOpen, handleOnChange, handleClick, setReload }) => {
+
     const handleClose = () => {
         setOpen(false);
     };
 
     return (
-        <div className={S.divPrincipal}>
+        <div>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -21,7 +22,7 @@ const ModalProd = ({ setOpen }) => {
             >
                 <div>
                     <Box className={S.divInterna}>
-                        <Form />
+                        <Form handleOnChange={handleOnChange} handleClick={handleClick} setReload={setReload} setOpen={setOpen} />
                     </Box>
                 </div>
             </Modal>
