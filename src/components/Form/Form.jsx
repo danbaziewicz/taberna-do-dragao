@@ -36,7 +36,7 @@ const Form = ({ setOpen, setReload }) => {
 
     return (
         <div className={S.formPost}>
-            <form >
+            <form onSubmit={handleClick}>
                 <h3>Adicione um novo produto</h3>
                 <fieldset>
                     <Label text='Categoria do Produto' />
@@ -61,7 +61,7 @@ const Form = ({ setOpen, setReload }) => {
                     <Input value={formAtualiza.descricao} type='text' required={true} minLength={10} onChange={({ target }) => handleOnChange(target, "descricao")} />
                 </fieldset>
                 <div className={S.btnPost}>
-                    <Button onClick={handleClick} texto='Submeter' />
+                    <Input type='submit' text='Submeter' />
                     <Button onClick={handleClose} texto='Fechar' />
                 </div>
             </form>
