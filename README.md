@@ -1,7 +1,7 @@
 # <p align="center"> Taberna do Dragão </p>
 
 <p align="center" width="100%">
-<img src="https://raw.githubusercontent.com/danbaziewicz/taberna-do-dragao/home/src/assets/images/logoSemBackground.png"/></p>
+<img src="https://raw.githubusercontent.com/danbaziewicz/taberna-do-dragao/home/src/assets/images/Logo_taberna_do_dragao.png"/></p>
 
 <!--ts-->
    * [Status do projeto](#status-do-projeto)
