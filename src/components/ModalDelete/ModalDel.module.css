@@ -1,6 +1,43 @@
-.divInterna {
+.divPrincipal {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: none;
+}
+
+.divInterna {
+  display: flex;
+  width: 25%;
+  border-radius: 2rem;
+  margin-top: 25rem;
+  margin-left: 38rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #dad7cd;
+  padding: 5rem;
+}
+
+.divInterna h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+.divInterna button {
+  margin-left: 2rem;
+  width: 100px;
+  height: 40px;
+  color: #f2f2f2;
+  margin-top: 1rem;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #1e2824 0%, #766b65 100%);
+  border-radius: 15px;
+  font-size: 15px;
+  border: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.divInterna button:hover {
+  scale: 1.1;
+  cursor: pointer;
 }

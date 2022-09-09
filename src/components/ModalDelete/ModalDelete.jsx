@@ -19,19 +19,21 @@ const ModalDelete = ({ produtosId, setopenDelete, setReload, openDelete }) => {
     }
 
     return (
-        <div>
-            <Modal className={S.divInterna}
+        <div className={S.divPrincipal}>
+            <Modal
                 open={openDelete}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description">
-                <Box>
-                    <h4>Quer deletar o produto?</h4>
-                    <div>
-                        <Button onClick={handleDelete} texto='SIM' />
-                        <Button onClick={handleClose} texto='CANCELAR' />
-                    </div>
-                </Box>
+                <div>
+                    <Box className={S.divInterna}>
+                        <h3>Quer deletar o produto?</h3>
+                        <div>
+                            <Button onClick={handleDelete} texto='SIM' />
+                            <Button onClick={handleClose} texto='CANCELAR' />
+                        </div>
+                    </Box>
+                </div>
             </Modal>
         </div>
     )
