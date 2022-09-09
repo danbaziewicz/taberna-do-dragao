@@ -83,8 +83,11 @@
 
 .alert {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
+  gap: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .alert > h3 {
@@ -106,6 +109,7 @@
   font-size: 20px;
   border: 0;
   font-family: 'Poppins', sans-serif;
+  cursor: pointer;
 }
 
 .button:hover {

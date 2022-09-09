@@ -45,7 +45,13 @@ const Footer = () => {
         </div>
         <div className={S.alert}>
           <h3>BEBA COM MODERAÇÃO! <FaBeer size="15px"/></h3>
+          <div>
+          <h4>Projeto realizado para fins educacionais</h4>
+          <h4>Todos os direitos reservados. 2022</h4>
+          </div>
+          
         </div>
+        
 
         <div>
           <form className={S.newsletter}>

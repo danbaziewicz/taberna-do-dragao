@@ -2,12 +2,25 @@ import React, { useState } from 'react'
 import Styles from './Login.module.css'
 import logoSemBackground from '../../assets/images/logoSemBackground.png'
 import { Link } from 'react-router-dom';
+import { AiOutlineExclamationCircle } from "react-icons/ai"
 
 
 const Login = () => {
   const [email, setEmail] = useState("")
-  const [senha, setSenha] = useState("")
+  const [valido, setValido] = useState(true)
+  const handleChange=(e)=>{
+    const regex = /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/
 
+    let valor= e.target.value
+    if (regex.test(valor)){
+      
+      setValido(true)
+    } else {
+      setValido(false)
+    }
+    
+    
+  }
 
   return (
     <section className={Styles.containerTotal}>
@@ -38,13 +51,14 @@ const Login = () => {
           <label htmlFor="password" className={Styles.label}>
               Senha:
             </label>
-            <input className= {Styles.input} type="password" id="senha" name="senha" />
+            <input  onChange={(e)=>handleChange(e)} className= {Styles.input} type="password" id="senha" name="senha" />
+            {valido? "":<p className={Styles.label}>senha invalida <abbr title="Sua senha precisa ter: Duas letras maiúsculas,três letras minúsculas, dois números e um caractere especial. Exemplo: AF@02cvb "><AiOutlineExclamationCircle/></abbr> </p>}
             <span className={Styles.focusInput} data-placeholder="Password"></span>
           </div>
 
 
           <div className={Styles.containerFormulariosBtn}>
-            <input value="Conectar" type= "submit" className={Styles.formulariosBtn}></input>
+            <input value="Conectar" type= "submit"  className={Styles.formulariosBtn}></input>
           </div>
         </form>
 
