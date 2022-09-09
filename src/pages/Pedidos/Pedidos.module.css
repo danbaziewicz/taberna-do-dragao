@@ -5,7 +5,7 @@
   min-height: 74vh;
   background-color: #f6ebda;
   display: grid;
-  justify-items: stretch;
+  justify-items: center;
   font-family: "Poppins", sans-serif;
   grid-template-columns: repeat(4, auto);
 }
