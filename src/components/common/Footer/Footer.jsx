@@ -1,6 +1,5 @@
 import React from "react";
 import S from "./Footer.module.css";
-import Input from "../Input/Input";
 import { FaWhatsapp, FaPhone, FaFacebookSquare, FaInstagram, FaTwitter, FaLinkedin, FaCcVisa, FaCcPaypal, FaRegMoneyBillAlt, FaRegPaperPlane, FaCcMastercard, FaBeer} from "react-icons/fa";
 import svg from "../../../assets/images/pix.svg"
 import logo from "../../../assets/images/logoSemBackground.png"
@@ -56,12 +55,13 @@ const Footer = () => {
         <div>
           <form className={S.newsletter}>
             <h3>Assine nossa Newsletter! <FaRegPaperPlane/></h3>
-            <Input
+            <input
               type="email"
               name="email"
               id="email"
               placeholder={"Seu e-mail?"}
-              style={S.input}
+              className={S.input}
+              required={true}
             />
             <input type="submit" value="Assinar" className={S.button}/>
           </form>
