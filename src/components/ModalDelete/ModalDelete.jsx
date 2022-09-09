@@ -1,3 +1,4 @@
+import S from './ModalDel.module.css'
 import {
     Box,
     Modal
@@ -5,7 +6,6 @@ import {
 import React from 'react';
 import { deleteProduto } from "../../Service/Service";
 import Button from "../common/Button/Button";
-import S from './ModalDel.module.css'
 
 const ModalDelete = ({ produtosId, setopenDelete, setReload, openDelete }) => {
     const handleDelete = async () => {
